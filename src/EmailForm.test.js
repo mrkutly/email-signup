@@ -44,7 +44,7 @@ describe('Privacy Policy', () => {
 })
 
 describe('Email form submission', () => {
-  it('alerts the user when an invalid email is given', () =>{
+  it('alerts the user when an invalid email is given', () => {
     const wrapper = mount(<EmailForm />)
 
     const checkbox = wrapper.find('input[name="privacyPolicy"]')

@@ -16,7 +16,7 @@ describe('Name form', () => {
     expect(wrapper.find('.message').text()).to.equal("ALMOST DONE! PLEASE ENTER YOUR FIRST AND LAST NAME.")
   })
 
-  it('renders two input fields for first and last name', () =>{
+  it('renders two input fields for first and last name', () => {
     expect(wrapper.find('input')).to.have.lengthOf(2)
   })
 
@@ -40,7 +40,7 @@ describe('Name form', () => {
 })
 
 describe('Name form submission', () => {
-  it('alerts the user when first name field is empty', () =>{
+  it('alerts the user when first name field is empty', () => {
     const wrapper = mount(<NameForm />)
 
     const last = wrapper.find('input[name="last-name"]')
@@ -53,7 +53,7 @@ describe('Name form submission', () => {
     expect(wrapper.find('.error-message').text()).to.eq("Oops! Please include a first name.")
   })
 
-  it('alerts the user when last name field is empty', () =>{
+  it('alerts the user when last name field is empty', () => {
     const wrapper = mount(<NameForm />)
 
     const first = wrapper.find('input[name="first-name"]')
