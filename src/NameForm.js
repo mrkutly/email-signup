@@ -19,6 +19,9 @@ export default class NameForm extends Component {
     try {
       this.firstNameExists()
       this.lastNameExists()
+
+      const { first, last } = this.state
+      this.props.setName(first, last)
     } catch(error) {
       this.setState({ error })
     }

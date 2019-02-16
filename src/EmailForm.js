@@ -50,8 +50,9 @@ export default class EmailForm extends Component {
     const { email, privacyChecked, error } = this.state
     return (
       <React.Fragment>
+        <div className="signup-message">SIGN UP FOR THE TLC NEWSLETTER.</div>
         <form className="email-form" onSubmit={ this.handleSubmit }>
-          <input type="text" name="email" onChange={ this.handleEmailChange } value={ email } />
+          <input type="text" name="email" onChange={ this.handleEmailChange } value={ email } placeholder="enter email address" />
           <input type="checkbox" name="privacyPolicy" onChange={ this.handlePrivacyChange } checked={ privacyChecked } />
           <button type="submit" className="next-btn" onSubmit={ this.handleSubmit }>Next</button>
         </form>

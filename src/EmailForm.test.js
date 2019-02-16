@@ -11,6 +11,11 @@ configure({ adapter: new Adapter() })
 describe('Email form', () => {
   const wrapper = mount(<EmailForm />)
 
+  it('renders a sign up message', () => {
+    const message = wrapper.find('.signup-message').text()
+    expect(message).to.equal("SIGN UP FOR THE TLC NEWSLETTER.")
+  })
+
   it('has an input for an email address', () => {
     expect(wrapper.find('input[name="email"]')).to.have.lengthOf(1)
   })
@@ -48,7 +53,7 @@ describe('Email form submission', () => {
     const email = wrapper.find('input[name="email"]')
     email.simulate('change', { target: { value: 'hello@' } })
 
-    const form = wrapper.find('form')
+    const form = wrapper.find('.email-form')
     form.simulate('submit')
 
     expect(wrapper.state().error).to.not.be.null
@@ -61,7 +66,7 @@ describe('Email form submission', () => {
     const email = wrapper.find('input[name="email"]')
     email.simulate('change', { target: { value: 'mark@code-challenge.com' } })
 
-    const form = wrapper.find('form')
+    const form = wrapper.find('.email-form')
     form.simulate('submit')
 
     expect(wrapper.state().error).to.not.be.null
