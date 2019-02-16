@@ -1,6 +1,6 @@
 ### Email sign up component ###
 
-#Installation
+# Installation
 - Clone down this repo to your local machine
 
 - To run with yarn
