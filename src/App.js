@@ -4,11 +4,19 @@ import './App.css'
 
 class App extends Component {
 
+  state = {
+    email: null,
+  }
+
+  setEmail(email) {
+    this.setState({ email })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>SIGN UP FOR THE TLC NEWSLETTER.</h1>
-        <EmailForm />
+        <EmailForm setEmail={ (email) => this.setEmail(email) }/>
       </div>
     );
   }
