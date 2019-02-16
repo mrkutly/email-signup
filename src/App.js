@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  state = {
+    email: '',
+    privacyChecked: false
+  }
+
+  handleEmailChange = (e) => {
+    this.setState({ email: e.target.value })
+  }
+
+  handlePrivacyChange = (e) => {
+    this.setState(prevState => {
+      return { privacyChecked: !prevState.privacyChecked }
+    })
+  }
+
   render() {
+    const { email, privacyChecked } = this.state
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>SIGN UP FOR THE TLC NEWSLETTER.</h1>
+        <input type="text" name="email" onChange={this.handleEmailChange} value={email} />
+        <input type="checkbox" name="privacyPolicy" onChange={this.handlePrivacyChange} checked={privacyChecked} />
       </div>
     );
   }
