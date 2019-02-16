@@ -12,8 +12,28 @@ body {
 button {
   color: white;
   background-color: #ED1F34;
-  border-radius: 10%;
+  border-radius: 5px;
   border: none;
+  font-size: 1.5em;
+  font-weight: 500;
+  padding: 10px 30px;
+  width: 20%;
+}
+
+input[name="email"] {
+  background-color: #2A2739;
+  border: none;
+  border-radius: 5px;
+  width: 70%;
+  padding: 10px 20px;
+  margin: 20px 20px 0 0;
+  font-size: 1.6em;
+}
+
+input[name="privacyPolicy"] {
+  width: 3%;
+  position: relative;
+  bottom: 1.5em;
 }
 
 .App {
@@ -21,15 +41,144 @@ button {
   border-top: solid 1px #413F4B;
   border-bottom: solid 1px #413F4B;
   color: #94AEBF;
-  height: 30%;
+  height: 26%;
   width: 100%;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
+  top: 28%;
+}
+
+.email-signup {
+  margin: 20px auto;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px 30px 0 0;
 }
 
 .join-message {
   color: #B6FDBF;
-  font-size: 4em;
+  font-size: 5.4em;
+  letter-spacing: 4px;
+  width: 20%;
+  float: left;
+  line-height: 1.6em;
+  margin: 2.5% 0 0 13%;
+}
+
+.privacy-policy-agreement {
+  margin-top: 10px;
+  width: 60%;
+  font-size: 0.8em;
+  font-weight: 300;
+  color: #5B5A62;
+  display: inline-block;
+}
+
+.signup-message {
+  font-weight: 700;
+  font-size: 1.5em;
+  width: 100%;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1024px) {
+  .App {
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .join-message {
+    width: auto;
+    position: absolute;
+    margin: 6% 0 0 17.3%;
+    font-size: 4.1em;
+  }
+
+  .email-signup {
+    margin: 20px 44%;
+  }
+
+  input[name="email"] {
+    width: 47%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .App {
+    border-top: none;
+    border-bottom: none;
+    text-align: center;
+  }
+
+  .email-form {
+    text-align: left;
+    margin-left: 120px;
+    margin-right: -50px;
+  }
+
+  .email-signup {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .join-message {
+    width: auto;
+    margin: 0;
+    padding-left: 30%;
+    position: relative;
+  }
+
+  .privacy-policy-agreement {
+    margin-left: 15px;
+  }
+
+  input[name="privacyPolicy"] {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .App {
+    height: 50%;
+    border-top: solid 1px #413F4B;
+    border-bottom: solid 1px #413F4B;
+  }
+
+  .email-form {
+    margin: 0;
+    text-align: center;
+  }
+
+  .join-message {
+    font-size: 3em;
+    padding: 0;
+    margin: auto;
+    text-align: left;
+    width: 200px;
+    position: absolute;
+  }
+
+  input[name="email"] {
+    width: 260px;
+    margin: 0 auto;
+  }
+
+  button {
+    width: 300px;
+  }
+
+  .privacy-policy-agreement {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  input[name="privacyPolicy"] {
+    display: initial;
+    bottom: 45px;
+  }
 }

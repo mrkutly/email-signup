@@ -49,16 +49,21 @@ export default class EmailForm extends Component {
   render() {
     const { email, privacyChecked, error } = this.state
     return (
-      <React.Fragment>
+      <div className="email-signup">
         <div className="signup-message">SIGN UP FOR THE TLC NEWSLETTER.</div>
         <form className="email-form" onSubmit={ this.handleSubmit }>
           <input type="text" name="email" onChange={ this.handleEmailChange } value={ email } placeholder="enter email address" />
-          <input type="checkbox" name="privacyPolicy" onChange={ this.handlePrivacyChange } checked={ privacyChecked } />
           <button type="submit" className="next-btn" onSubmit={ this.handleSubmit }>Next</button>
+          <br />
+          <input type="checkbox" name="privacyPolicy" onChange={ this.handlePrivacyChange } checked={ privacyChecked } />
+
+          <div className="privacy-policy-agreement">
+            <label htmlFor="privacyPolicy"><span>I agree to receive information from Discovery Communications in accordance with the following <span className="underline">Privacy Policy</span></span></label>
+          </div>
         </form>
 
         { !!error ? <ErrorMessage message={ error.message } /> : null }
-      </React.Fragment>
+      </div>
     )
   }
 }
