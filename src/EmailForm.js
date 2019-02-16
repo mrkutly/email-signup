@@ -50,7 +50,7 @@ export default class EmailForm extends Component {
     const { email, privacyChecked, error } = this.state
     return (
       <div className="email-signup">
-        <div className="signup-message">SIGN UP FOR THE TLC NEWSLETTER.</div>
+        <div className="message">SIGN UP FOR THE TLC NEWSLETTER.</div>
         <form className="email-form" onSubmit={ this.handleSubmit }>
           <input type="text" name="email" onChange={ this.handleEmailChange } value={ email } placeholder="enter email address" />
           <button type="submit" className="next-btn" onSubmit={ this.handleSubmit }>Next</button>
