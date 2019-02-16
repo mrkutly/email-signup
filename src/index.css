@@ -44,16 +44,6 @@ input[name="first-name"], input[name="last-name"] {
   margin: 8px;
 }
 
-.name-form button {
-  width: 10%;
-  padding: 10px 5px;
-  font-weight: 600;
-}
-
-.name-form-div {
-  margin-top: 3%;
-}
-
 input[name="privacyPolicy"] {
   width: 3%;
   position: relative;
@@ -70,6 +60,20 @@ input[name="privacyPolicy"] {
   width: 100%;
   position: absolute;
   top: 28%;
+}
+
+.congrats-message {
+  color: #B6FDBF;
+  font-size: 5.4em;
+  letter-spacing: 4px;
+  float: left;
+  line-height: 1.6em;
+  position: absolute;
+  width: 32%;
+  overflow: visible;
+  overflow-wrap: break-word;
+  margin-top: 2%;
+  margin-left: 13%;
 }
 
 .email-signup {
@@ -95,24 +99,26 @@ input[name="privacyPolicy"] {
   margin: 2.5% 0 0 13%;
 }
 
-.congrats-message {
-  color: #B6FDBF;
-  font-size: 5.4em;
-  letter-spacing: 4px;
-  float: left;
-  line-height: 1.6em;
-  position: absolute;
-  width: 32%;
-  overflow: visible;
-  overflow-wrap: break-word;
-  margin-top: 2%;
-  margin-left: 13%;
-}
-
 .lookout-message {
   font-size: 2em;
   font-weight: 200;
   margin-left: 45%;
+}
+
+.message, .message {
+  font-weight: 700;
+  font-size: 1.5em;
+  width: 100%;
+}
+
+.name-form button {
+  width: 10%;
+  padding: 10px 5px;
+  font-weight: 600;
+}
+
+.name-form-div {
+  margin-top: 3%;
 }
 
 .privacy-policy-agreement {
@@ -122,12 +128,6 @@ input[name="privacyPolicy"] {
   font-weight: 300;
   color: #5B5A62;
   display: inline-block;
-}
-
-.message, .message {
-  font-weight: 700;
-  font-size: 1.5em;
-  width: 100%;
 }
 
 .thanks-message {
@@ -144,6 +144,16 @@ input[name="privacyPolicy"] {
 
 /* Tablet landscape */
 @media screen and (max-width: 1024px) {
+
+  input[name="email"] {
+    color: white;
+    width: 47%;
+  }
+
+  input[name="first-name"], input[name="last-name"] {
+    color: white;
+    width: 20%;
+  }
 
   .congrats-message {
     margin-left: 6%;
@@ -163,13 +173,17 @@ input[name="privacyPolicy"] {
     font-size: 4.1em;
   }
 
-  .name-form-div {
-    margin-left: 33%;
-    margin-top: 6%;
+  .lookout-message {
+    font-size: 1.5em;
   }
 
   .message {
     font-size: 1.3em;
+  }
+
+  .name-form-div {
+    margin-left: 33%;
+    margin-top: 6%;
   }
 
   .name-form button {
@@ -179,20 +193,6 @@ input[name="privacyPolicy"] {
   .thanks-message, .lookout-message {
     margin-left: 42%;
     font-size: 1.8em;
-  }
-
-  .lookout-message {
-    font-size: 1.5em;
-  }
-
-  input[name="email"] {
-    color: white;
-    width: 47%;
-  }
-
-  input[name="first-name"], input[name="last-name"] {
-    color: white;
-    width: 20%;
   }
 }
 
@@ -263,6 +263,30 @@ input[name="privacyPolicy"] {
 
 /* phone */
 @media screen and (max-width: 480px) {
+
+  button {
+    width: 300px;
+    font-size: 1em;
+  }
+
+  input[name="email"] {
+    width: 260px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    font-size: 1em;
+  }
+
+  input[name="first-name"], input[name="last-name"] {
+    color: white;
+    width: 30%;
+    padding-top: 15px;
+    font-size: 1em;
+  }
+
+  input[name="privacyPolicy"] {
+    bottom: 45px;
+  }
+
   .App {
     height: 50%;
     border-top: solid 1px #413F4B;
@@ -289,27 +313,6 @@ input[name="privacyPolicy"] {
     text-align: left;
     width: 200px;
     position: absolute;
-  }
-
-  input[name="email"] {
-    width: 260px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    font-size: 1em;
-  }
-
-  button {
-    width: 300px;
-    font-size: 1em;
-  }
-
-  .privacy-policy-agreement {
-    margin-left: 0;
-    text-align: left;
-  }
-
-  input[name="privacyPolicy"] {
-    bottom: 45px;
   }
 
   .lookout-message {
@@ -342,11 +345,9 @@ input[name="privacyPolicy"] {
     width: 86%;
   }
 
-  input[name="first-name"], input[name="last-name"] {
-    color: white;
-    width: 30%;
-    padding-top: 15px;
-    font-size: 1em;
+  .privacy-policy-agreement {
+    margin-left: 0;
+    text-align: left;
   }
 
   .thanks-message {
