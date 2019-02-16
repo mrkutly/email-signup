@@ -4,7 +4,7 @@ import App from './App'
 import EmailForm from './EmailForm'
 import NameForm from './NameForm'
 import Congratulations from './Congratulations'
-import { configure, mount } from 'enzyme'
+import { configure, mount, shallow } from 'enzyme'
 import { expect } from 'chai'
 import Adapter from 'enzyme-adapter-react-16'
 
@@ -15,7 +15,16 @@ describe('App', () => {
   it('initially renders the email form', () => {
     const wrapper = mount(<App />)
 
+    expect(wrapper.state().current).to.equal("email")
     expect(wrapper.contains(EmailForm.prototype)).to.equal(true)
+  })
+
+
+  it('renders a call to action message in initial state', () => {
+    const wrapper = shallow(<App />)
+
+    const message = wrapper.find('.join-message').text()
+    expect(message).to.equal("Join the list")
   })
 
   it('has state that is controlled by email form', () => {
@@ -45,7 +54,24 @@ describe('App', () => {
     const form = wrapper.find('.email-form')
     form.simulate('submit')
 
+    expect(wrapper.state().current).to.equal("name")
     expect(wrapper.contains(NameForm.prototype)).to.equal(true)
+  })
+
+  it('renders call to action message with name form', () => {
+    const wrapper = mount(<App />)
+
+    const email = wrapper.find('input[name="email"]')
+    email.simulate('change', { target: { value: 'mark.sauer.utley@gmail.com'} })
+
+    const checkbox = wrapper.find('input[name="privacyPolicy"]')
+    checkbox.simulate('change')
+
+    const form = wrapper.find('.email-form')
+    form.simulate('submit')
+
+    const message = wrapper.find('.join-message').text()
+    expect(message).to.equal("Join the list")
   })
 
   it('has state that is controlled by the name form', () => {
@@ -95,6 +121,7 @@ describe('App', () => {
     const nameForm = wrapper.find('.name-form')
     nameForm.simulate('submit')
 
+    expect(wrapper.state().current).to.equal("congratulations")
     expect(wrapper.contains(Congratulations)).to.equal(true)
   })
 })

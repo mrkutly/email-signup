@@ -6,9 +6,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+button {
+  color: white;
+  background-color: #ED1F34;
+  border-radius: 10%;
+  border: none;
+}
+
+.App {
+  background-color: #120F23;
+  border-top: solid 1px #413F4B;
+  border-bottom: solid 1px #413F4B;
+  color: #94AEBF;
+  height: 30%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.join-message {
+  color: #B6FDBF;
+  font-size: 4em;
 }
