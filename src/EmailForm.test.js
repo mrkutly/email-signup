@@ -38,7 +38,7 @@ describe('Privacy Policy', () => {
   })
 })
 
-describe('Form submission', () => {
+describe('Email form submission', () => {
   it('alerts the user when an invalid email is given', () =>{
     const wrapper = mount(<EmailForm />)
 
@@ -51,6 +51,7 @@ describe('Form submission', () => {
     const form = wrapper.find('form')
     form.simulate('submit')
 
+    expect(wrapper.state().error).to.not.be.null
     expect(wrapper.find('.error-message').text()).to.equal("Uh oh! That is not a valid email address.")
   })
 
@@ -63,6 +64,7 @@ describe('Form submission', () => {
     const form = wrapper.find('form')
     form.simulate('submit')
 
+    expect(wrapper.state().error).to.not.be.null
     expect(wrapper.find('.error-message').text()).to.equal("Please accept our Privacy Policy to continue.")
   })
 })

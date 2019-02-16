@@ -7,6 +7,8 @@ class App extends Component {
 
   state = {
     email: null,
+    first: null,
+    last: null
   }
 
   setEmail(email) {

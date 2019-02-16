@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import ErrorMessage from './ErrorMessage'
 
 export default class EmailForm extends Component {
 
@@ -49,17 +49,15 @@ export default class EmailForm extends Component {
   render() {
     const { email, privacyChecked, error } = this.state
     return (
-      <form className="email-form" onSubmit={ this.handleSubmit }>
-        <input type="text" name="email" onChange={ this.handleEmailChange } value={ email } />
-        <input type="checkbox" name="privacyPolicy" onChange={ this.handlePrivacyChange } checked={ privacyChecked } />
-        <button type="submit" className="next-btn" onSubmit={ this.handleSubmit }>Next</button>
-        {
-          !!error ?
-            <p className="error-message">{error.message}</p>
-          :
-            null
-        }
-      </form>
+      <React.Fragment>
+        <form className="email-form" onSubmit={ this.handleSubmit }>
+          <input type="text" name="email" onChange={ this.handleEmailChange } value={ email } />
+          <input type="checkbox" name="privacyPolicy" onChange={ this.handlePrivacyChange } checked={ privacyChecked } />
+          <button type="submit" className="next-btn" onSubmit={ this.handleSubmit }>Next</button>
+        </form>
+
+        { !!error ? <ErrorMessage message={ error.message } /> : null }
+      </React.Fragment>
     )
   }
 }
