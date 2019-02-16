@@ -46,7 +46,7 @@ export default class NameForm extends Component {
   render() {
     const { error } = this.state
     return (
-      <React.Fragment>
+      <div className="name-form-div">
         <div className="message">
           ALMOST DONE! PLEASE ENTER YOUR FIRST AND LAST NAME.
         </div>
@@ -58,7 +58,7 @@ export default class NameForm extends Component {
         </form>
 
         { !!error ? <ErrorMessage message={ error.message } /> : null }
-      </React.Fragment>
+      </div>
     )
   }
 }

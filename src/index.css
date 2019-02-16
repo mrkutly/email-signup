@@ -9,6 +9,10 @@ body {
   background-color: black;
 }
 
+input[type=text] {
+  color: white;
+}
+
 button {
   color: white;
   background-color: #ED1F34;
@@ -28,6 +32,26 @@ input[name="email"] {
   padding: 10px 20px;
   margin: 20px 20px 0 0;
   font-size: 1.6em;
+}
+
+input[name="first-name"], input[name="last-name"] {
+  background-color: #2A2739;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px 5px;
+  font-size: 1.6em;
+  width: 15%;
+  margin: 8px;
+}
+
+.name-form button {
+  width: 10%;
+  padding: 10px 5px;
+  font-weight: 600;
+}
+
+.name-form-div {
+  margin-top: 3%;
 }
 
 input[name="privacyPolicy"] {
@@ -71,6 +95,26 @@ input[name="privacyPolicy"] {
   margin: 2.5% 0 0 13%;
 }
 
+.congrats-message {
+  color: #B6FDBF;
+  font-size: 5.4em;
+  letter-spacing: 4px;
+  float: left;
+  line-height: 1.6em;
+  position: absolute;
+  width: 32%;
+  overflow: visible;
+  overflow-wrap: break-word;
+  margin-top: 2%;
+  margin-left: 13%;
+}
+
+.lookout-message {
+  font-size: 2em;
+  font-weight: 200;
+  margin-left: 45%;
+}
+
 .privacy-policy-agreement {
   margin-top: 10px;
   width: 60%;
@@ -86,37 +130,82 @@ input[name="privacyPolicy"] {
   width: 100%;
 }
 
+.thanks-message {
+  margin-top: 5%;
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-left: 45%;
+}
+
 .underline {
   text-decoration: underline;
 }
 
+
+/* Tablet landscape */
 @media screen and (max-width: 1024px) {
-  .App {
-    border-top: none;
-    border-bottom: none;
+
+  .congrats-message {
+    margin-left: 6%;
+    margin-top: 3%;
+    overflow-wrap: normal;
+    font-size: 4.1em;
+  }
+
+  .email-signup {
+    margin: 20px 30.5%
   }
 
   .join-message {
     width: auto;
     position: absolute;
-    margin: 6% 0 0 17.3%;
+    margin: 6% 0 0 4%;
     font-size: 4.1em;
   }
 
-  .email-signup {
-    margin: 20px 44%;
+  .name-form-div {
+    margin-left: 33%;
+    margin-top: 6%;
+  }
+
+  .message {
+    font-size: 1.3em;
+  }
+
+  .name-form button {
+    width: 20%;
+  }
+
+  .thanks-message, .lookout-message {
+    margin-left: 42%;
+    font-size: 1.8em;
+  }
+
+  .lookout-message {
+    font-size: 1.5em;
   }
 
   input[name="email"] {
+    color: white;
     width: 47%;
+  }
+
+  input[name="first-name"], input[name="last-name"] {
+    color: white;
+    width: 20%;
   }
 }
 
+
+/* Tablet portrait */
 @media screen and (max-width: 800px) {
   .App {
-    border-top: none;
-    border-bottom: none;
     text-align: center;
+  }
+
+  .congrats-message {
+    font-size: 3.2em;
+    margin-left: 29%;
   }
 
   .email-form {
@@ -138,20 +227,53 @@ input[name="privacyPolicy"] {
     position: relative;
   }
 
+  .lookout-message {
+    margin-left: auto;
+    margin-top: 20%;
+  }
+
+  .message {
+    visibility: hidden;
+  }
+
+  .message::after{
+    margin-left: -43%;
+    visibility: visible;
+  	content: "SIGN UP FOR THE TLC NEWSLETTER";
+  }
+
+  .name-form-div {
+    margin-left: 0;
+  }
+
   .privacy-policy-agreement {
     margin-left: 15px;
   }
 
-  input[name="privacyPolicy"] {
-    display: none;
+  .thanks-message {
+    position: absolute;
+    top: 63px;
+    margin-left: 24%;
+    left: 0;
+    text-align: left;
+    width: 40%;
   }
 }
 
+
+/* phone */
 @media screen and (max-width: 480px) {
   .App {
     height: 50%;
     border-top: solid 1px #413F4B;
     border-bottom: solid 1px #413F4B;
+  }
+
+  .congrats-message {
+    width: 75%;
+    overflow-wrap: break-word;
+    text-align: left;
+    margin-left: 15%;
   }
 
   .email-form {
@@ -187,8 +309,12 @@ input[name="privacyPolicy"] {
   }
 
   input[name="privacyPolicy"] {
-    display: initial;
     bottom: 45px;
+  }
+
+  .lookout-message {
+    margin-left: auto;
+    margin-top: 10px;
   }
 
   .message {
@@ -196,5 +322,36 @@ input[name="privacyPolicy"] {
     font-size: 1.3em;
     width: 60%;
     margin: 20% auto 10px;
+  }
+
+  .message {
+    visibility: visible;
+    font-size: 1em;
+    width: 80%;
+  }
+
+  .message::after{
+    display: none;
+  }
+
+  .name-form {
+    margin-right: 6px;
+  }
+
+  .name-form button {
+    width: 86%;
+  }
+
+  input[name="first-name"], input[name="last-name"] {
+    color: white;
+    width: 30%;
+    padding-top: 15px;
+    font-size: 1em;
+  }
+
+  .thanks-message {
+    width: auto;
+    position: initial;
+    margin-top: 31%;
   }
 }

@@ -13,7 +13,7 @@ describe('Congratulations', () => {
 
   it('renders the word "congratulations"', () => {
     const congrats = wrapper.find('.congrats-message').text()
-    expect(congrats).to.equal('Congratulations!')
+    expect(congrats).to.equal('congratulations!')
   })
 
   it('renders a thank you message', () => {

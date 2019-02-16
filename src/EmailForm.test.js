@@ -12,7 +12,7 @@ describe('Email form', () => {
   const wrapper = mount(<EmailForm />)
 
   it('renders a sign up message', () => {
-    const message = wrapper.find('.signup-message').text()
+    const message = wrapper.find('.message').text()
     expect(message).to.equal("SIGN UP FOR THE TLC NEWSLETTER.")
   })
 
