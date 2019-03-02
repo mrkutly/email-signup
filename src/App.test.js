@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
-import EmailForm from './EmailForm'
-import NameForm from './NameForm'
-import Congratulations from './Congratulations'
 import { configure, mount, shallow } from 'enzyme'
 import { expect } from 'chai'
 import Adapter from 'enzyme-adapter-react-16'
+import App from './App'
+import EmailForm from './components/EmailForm'
+import NameForm from './components/NameForm'
+import Congratulations from './components/Congratulations'
 
 
 configure({ adapter: new Adapter() })
