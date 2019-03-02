@@ -34,7 +34,7 @@ input[name="email"] {
   font-size: 1.6em;
 }
 
-input[name="first-name"], input[name="last-name"] {
+input[name="first"], input[name="last"] {
   background-color: #2A2739;
   border: none;
   border-radius: 5px;
@@ -150,7 +150,7 @@ input[name="privacyPolicy"] {
     width: 47%;
   }
 
-  input[name="first-name"], input[name="last-name"] {
+  input[name="first"], input[name="last"] {
     color: white;
     width: 20%;
   }
@@ -276,7 +276,7 @@ input[name="privacyPolicy"] {
     font-size: 1em;
   }
 
-  input[name="first-name"], input[name="last-name"] {
+  input[name="first"], input[name="last"] {
     color: white;
     width: 30%;
     padding-top: 15px;

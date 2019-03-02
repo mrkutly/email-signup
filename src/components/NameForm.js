@@ -1,64 +1,43 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import ErrorMessage from './ErrorMessage'
+import { useForm } from '../hooks/useForm'
+import { nameExists } from '../middleware/formValidation'
 
-export default class NameForm extends Component {
+const NameForm = (props) => {
+  const { formData, setField } = useForm()
+  const [error, setError] = useState(null)
+  const handleChange = (e) => setField(e)
 
-  state = {
-    first: '',
-    last: '',
-    error: null
-  }
-
-  handleChange = (e, name) => {
-    this.setState({ [name]: e.target.value })
-  }
-
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
 
     try {
-      this.firstNameExists()
-      this.lastNameExists()
+      const { first, last } = formData
 
-      const { first, last } = this.state
-      this.props.setName(first, last)
+      nameExists({ type: 'first', value: first })
+      nameExists({ type: 'last', value: last })
+
+      props.setName(first, last)
     } catch(error) {
-      this.setState({ error })
+      setError(error)
     }
   }
 
-  firstNameExists = () => {
-    const { first } = this.state
-
-    if (first.length < 1) {
-      throw new Error("Oops! Please include a first name.")
-    }
-  }
-
-  lastNameExists = () => {
-    const { last } = this.state
-
-    if (last.length < 1) {
-      throw new Error("Oops! Please include a last name.")
-    }
-  }
-
-  render() {
-    const { error } = this.state
-    return (
-      <div className="name-form-div">
-        <div className="message">
-          ALMOST DONE! PLEASE ENTER YOUR FIRST AND LAST NAME.
-        </div>
-
-        <form className="name-form" onSubmit={ this.handleSubmit } >
-          <input type="text" name="first-name" onChange={ (e) => this.handleChange(e, 'first') } placeholder="First Name" />
-          <input type="text" name="last-name" onChange={ (e) => this.handleChange(e, 'last') } placeholder="Last Name" />
-          <button type="submit">Sign Up</button>
-        </form>
-
-        { !!error ? <ErrorMessage message={ error.message } /> : null }
+  return (
+    <div className="name-form-div">
+      <div className="message">
+        ALMOST DONE! PLEASE ENTER YOUR FIRST AND LAST NAME.
       </div>
-    )
-  }
+
+      <form className="name-form" onSubmit={ handleSubmit } >
+        <input type="text" name="first" onChange={ handleChange } placeholder="First Name" />
+        <input type="text" name="last" onChange={ handleChange } placeholder="Last Name" />
+        <button type="submit">Sign Up</button>
+      </form>
+
+      { !!error ? <ErrorMessage message={ error.message } /> : null }
+    </div>
+  )
 }
+
+export default NameForm

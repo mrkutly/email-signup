@@ -1,45 +1,33 @@
-import React, { Component } from 'react'
+import React from 'react'
 import EmailForm from './components/EmailForm'
 import NameForm from './components/NameForm'
 import Congratulations from './components/Congratulations'
+import { useAppState } from './hooks/useAppState'
 
-class App extends Component {
+const App = (props) => {
+  const { state, setState } = useAppState()
+  const { current } = state
 
-  state = {
-    email: null,
-    first: null,
-    last: null,
-    current: "email"
+  const setEmail = (email) => setState({ field: "email", value: email, next: "name" })
+
+  const setName = async (first, last) => {
+    await setState({ field: 'name', value: { first, last }, next: "congratulations" })
+    const user = { first, last, email: state.email }
+    console.log(user)
   }
 
-  setEmail(email) {
-    this.setState({ email, current: "name" })
-  }
-
-  setName(first, last) {
-    this.setState({ first, last, current: "congratulations" }, () => {
-      const { first, last, email } = this.state
-      const user = { first, last, email }
-      console.log(user)
-    })
-  }
-
-  render() {
-    const { current } = this.state
-
-    return (
-      <div className="App">
-        {
-          current !== "congratulations" ? <div className="join-message">Join the list</div> : null
-        }
-        {
-          current === "email" ? <EmailForm setEmail={ (email) => this.setEmail(email) }/>
-            : ( current === "name" ? <NameForm setName={ (first, last) => this.setName(first, last) }/>
-              : <Congratulations />)
-        }
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      {
+        current !== "congratulations" ? <div className="join-message">Join the list</div> : null
+      }
+      {
+        current === "email" ? <EmailForm setEmail={ (email) => setEmail(email) }/>
+          : ( current === "name" ? <NameForm setName={ (first, last) => setName(first, last) }/>
+            : <Congratulations />)
+      }
+    </div>
+  );
 }
 
 export default App
