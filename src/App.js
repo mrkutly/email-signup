@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import EmailForm from './EmailForm'
-import NameForm from './NameForm'
-import Congratulations from './Congratulations'
+import EmailForm from './components/EmailForm'
+import NameForm from './components/NameForm'
+import Congratulations from './components/Congratulations'
 
 class App extends Component {
 
