@@ -27,3 +27,6 @@ Navigate to the root directory of this project.
 If you would like to run the test suites:
 
 - Run `npm test` and follow the prompts to select which tests to run
+
+### Notes
+This is a refactor of the master branch using hooks and middleware instead of class components.
