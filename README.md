@@ -27,3 +27,6 @@ Navigate to the root directory of this project.
 If you would like to run the test suites:
 
 - Run `npm test` and follow the prompts to select which tests to run
+
+### NOTE:
+Checkout the branch 'hooks-refactor' to see the same application built entirely with functional components using hooks and middleware instead of class components.
