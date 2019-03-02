@@ -12,21 +12,12 @@ Once you have yarn installed, navigate to the root directory of this project
 
 - Run `yarn start`
 
-If you would like to run the test suites:
-
-- Run `yarn test` and follow the prompts to select which tests to run
-
-
 ### To run with npm
 Navigate to the root directory of this project.
 
 - Run `npm install`
 
 - Run `npm start`
-
-If you would like to run the test suites:
-
-- Run `npm test` and follow the prompts to select which tests to run
 
 ### Notes
 This is a refactor of the master branch using hooks and middleware instead of class components.
